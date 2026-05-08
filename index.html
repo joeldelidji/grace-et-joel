@@ -29,20 +29,22 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
 }
 
 .hero-bg {
-  position: absolute; inset: 0;
-  background-image: url('IMG_8926.JPG');
-  background-size: cover; background-position: center;
-  filter: brightness(0.5);
-  animation: zoomEffect 20s infinite alternate;
+    position: absolute;
+    inset: 0;
+    background-image: url('DSCF3391.JPG');
+    background-size: cover;
+    background-position: center 20%; /* Ajuste le cadrage sur vos visages */
+    z-index: -1;
 }
 
 @keyframes zoomEffect { from { transform: scale(1); } to { transform: scale(1.1); } }
 
 .hero-gradient {
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 60%, var(--cream) 100%);
+    position: absolute;
+    inset: 0;
+    /* Ce dégradé rend le haut plus sombre pour lire le texte blanc */
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0) 40%, var(--cream) 100%);
 }
-
 .hero-content {
   position: relative; z-index: 2;
   text-align: center; padding: 0 24px 40px;

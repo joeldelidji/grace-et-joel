@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mariage Grâce & Joel – 4 Juillet 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -19,7 +19,7 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; line-height: 1.6; }
 
 /* --- HERO --- */
 .hero {
@@ -121,6 +121,20 @@ h1 {
   margin: 30px 0; border-radius: 15px;
 }
 
+/* --- PHOTO FINALE CENTRÉE --- */
+.final-photo-container {
+    text-align: center;
+    padding: 20px 20px 40px; /* Moins d'espace en haut, plus en bas */
+}
+.final-photo {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto; /* Centrage horizontal parfait */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 500px) {
@@ -136,7 +150,7 @@ h1 {
     <div class="hero-gradient"></div>
     <div class="hero-content">
         <p class="pre-title">L'union de deux âmes</p>
-      <p class="invitation-text">NOUS AVONS L'HONNEUR DE VOUS INVITER À NOTRE MARIAGE</p>
+      <p class="invitation-text" style="font-weight: 600; font-size: 0.8rem; letter-spacing: 2px;">NOUS AVONS L'HONNEUR DE VOUS INVITER À NOTRE MARIAGE</p>
         <div class="names">
             <h1>
                 <span>Grâce</span>
@@ -162,7 +176,7 @@ h1 {
       <div class="line-v"></div>
       <div>
         <div class="event-name">Cérémonie Civile</div>
-        <a href="https://maps.google.com" target="_blank" class="addr-link">
+        <a href="http://googleusercontent.com/maps.google.com/7" target="_blank" class="addr-link">
           <div class="addr"><strong>Mairie de Bagneux</strong><br>92220 Bagneux <br> <em>Voir le plan</em></div>
         </a>
       </div>
@@ -173,7 +187,7 @@ h1 {
       <div class="line-v"></div>
       <div>
         <div class="event-name">Vin d'Honneur</div>
-        <a href="https://maps.google.com" target="_blank" class="addr-link">
+        <a href="http://googleusercontent.com/maps.google.com/7" target="_blank" class="addr-link">
           <div class="addr"><strong>4 allée des Garays</strong><br>91120 Palaiseau <br> <em>Voir le plan</em></div>
         </a>
       </div>
@@ -184,7 +198,7 @@ h1 {
       <div class="line-v"></div>
       <div>
         <div class="event-name">Réception & Dîner</div>
-        <a href="https://maps.google.com" target="_blank" class="addr-link">
+        <a href="http://googleusercontent.com/maps.google.com/7" target="_blank" class="addr-link">
           <div class="addr"><strong>4 allée des Garays</strong><br>91120 Palaiseau <br> <em>Voir le plan</em></div>
         </a>
       </div>
@@ -193,10 +207,11 @@ h1 {
 
   <div class="band"></div>
 
-  <div style="text-align: center; padding: 40px 20px;">
-    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: #a2a887; font-weight: 700; max-width: 600px; margin: 0 auto; line-height: 1.4;">
+  <div class="final-photo-container">
+    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: #a2a887; font-weight: 700; max-width: 600px; margin: 0 auto 20px; line-height: 1.4;">
         Votre présence à nos côtés sera le plus beau des cadeaux.
     </p>
+    <img src="IMG_8926.JPG" alt="Table décorée" class="final-photo">
   </div>
 </div>
 

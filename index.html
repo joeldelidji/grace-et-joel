@@ -65,19 +65,21 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
 h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 3.2rem;
-    color: #89a389; /* La même couleur verte */
-    font-weight: 700; /* Bien en gras */
+    color: #a2a887; /* Le vert exact de votre encadré Samedi 4 */
+    font-weight: 700; 
     margin: 10px 0;
     line-height: 1.1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* On ajoute une ombre très légère pour que ça reste lisible sur la photo */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
-h1 span.ampersand {
-    font-size: 2.2rem; /* Le & un peu plus petit pour l'élégance */
+.ampersand {
+    font-size: 2.2rem;
+    color: #a2a887; /* On applique la même couleur au & */
     margin: 5px 0;
-    opacity: 0.8;
 }
 /* --- SECTIONS --- */
 .wrap { max-width: 700px; margin: 0 auto; padding: 40px 20px; }

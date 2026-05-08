@@ -55,21 +55,22 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: 1.2rem;
-    color: #ffffff;
-    font-weight: 800; /* Gras maximum */
+    color: #ffffff; /* On garde le blanc mais on va mettre une ombre très forte */
+    font-weight: 600; /* Gras intermédiaire (plus visible que le normal, moins agressif que le 800) */
     margin-bottom: 10px;
     letter-spacing: 2px;
-    text-transform: uppercase; /* En majuscules pour plus de lisibilité */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9); /* Ombre très forte */
+    /* Ombre noire très opaque pour rendre le blanc visible sur fond clair */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 1), 0 0 5px rgba(0,0,0,0.5); 
 }
+
 h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 3.5rem;
-    color: #ffffff;
-    font-weight: 800; /* Vos noms en très gras */
+    color: #A9D1A9; /* Vert pastel (ajustez ce code si ce n'est pas le bon vert) */
+    font-weight: 700; /* Gras prononcé pour vos noms */
     margin: 10px 0;
-    line-height: 1.1;
-    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9); /* Ombre large pour décoller du fond */
+    line-height: 1.2; /* On augmente un peu pour décoller les lignes */
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8); /* Ombre pour le contraste */
 }
 /* --- SECTIONS --- */
 .wrap { max-width: 700px; margin: 0 auto; padding: 40px 20px; }

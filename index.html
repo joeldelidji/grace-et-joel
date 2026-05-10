@@ -3,33 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mariage Grâce & Joël – 4 Juillet 2026</title>
+<title>Mariage Grâce & Joel – 4 Juillet 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --soft-gold:   #A6894B; 
-  --powder-rose: #E8C5C5; 
-  --lavender:    #D6D1F0; 
+  --gold-dark:   #A6894B; /* Or plus sombre pour la lisibilité */
+  --text-main:   #333333; /* Presque noir pour un contraste maximal */
+  --rose-soft:   #E8C5C5;
   --cream-bg:    #F9F6F1;
-  --text-dark:   #333333;
-  --white:       #FFFFFF;
 }
 
-html { scroll-behavior: smooth; }
-body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(--text-main); }
 
-/* --- HERO (IMAGE DE FOND DSCF3391.JPG) --- */
+/* --- HERO SECTION --- */
 .hero {
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 85vh;
   display: flex;
-  align-items: flex-start; /* Texte aligné vers le haut pour dégager les visages */
+  align-items: flex-start; /* Aligne le texte vers le haut */
   justify-content: center;
-  padding-top: 40px;
   overflow: hidden;
+  padding-top: 50px; /* Décale le texte du haut de l'écran */
 }
 
 .hero-bg {
@@ -41,34 +38,26 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
     z-index: -1;
 }
 
-.hero-gradient {
+/* Voile léger pour faire ressortir le texte sans cacher la photo */
+.hero-overlay {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0) 50%, var(--cream-bg) 100%);
-    z-index: 0;
-}
-
-/* BLOC DE TEXTE LISIBLE ET DÉCALÉ */
-.hero-card {
-    position: relative;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.7); /* Voile blanc transparent */
-    backdrop-filter: blur(8px); /* Flou derrière le texte pour la netteté */
-    padding: 35px 25px;
-    border-radius: 30px;
+    top: 40px;
+    background: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(5px); /* Effet de verre dépoli moderne */
+    padding: 30px 40px;
+    border-radius: 20px;
+    z-index: 1;
     text-align: center;
-    max-width: 85%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    animation: fadeUp 1.5s ease-out;
+    max-width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .hero-intro {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1.2rem;
-    color: var(--soft-gold);
-    letter-spacing: 1px;
+    font-size: 1.1rem;
+    color: var(--gold-dark);
+    letter-spacing: 2px;
     margin-bottom: 5px;
 }
 
@@ -76,34 +65,34 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
     letter-spacing: 3px;
     font-size: 0.75rem;
     font-weight: 500;
-    color: var(--text-dark);
+    color: var(--text-main);
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 10vw, 4rem);
-    color: var(--text-dark);
+    font-size: clamp(2.5rem, 10vw, 3.8rem);
+    color: var(--text-main);
     font-weight: 400;
     line-height: 1;
 }
 
 .ampersand {
     font-size: 1.8rem;
-    color: var(--soft-gold);
+    color: var(--gold-dark);
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    display: block;
-    margin: 5px 0;
+    display: inline-block;
+    margin: 0 10px;
 }
 
 .hero-date {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    color: var(--soft-gold);
+    font-size: 2rem;
+    color: var(--gold-dark);
     margin-top: 15px;
-    border-top: 1px solid rgba(166, 137, 75, 0.2);
+    border-top: 1px solid rgba(166, 137, 75, 0.3);
     padding-top: 10px;
 }
 
@@ -111,61 +100,30 @@ h1 {
     font-size: 0.85rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--text-dark);
-    margin-top: 8px;
-    opacity: 0.7;
+    color: var(--text-main);
+    margin-top: 10px;
+    opacity: 0.8;
 }
 
-/* --- SECTIONS --- */
-.wrap { max-width: 700px; margin: 0 auto; padding: 60px 20px; }
+/* --- RESTE DU SITE (ESPACEMENTS) --- */
+.wrap { max-width: 700px; margin: 0 auto; padding: 80px 20px; }
+.card { background: #fff; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 30px; margin-top: 40px; }
 
-.section-title { 
-    font-family: 'Cormorant Garamond', serif; 
-    font-size: 32px; 
-    text-align: center; 
-    margin-bottom: 40px;
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.hero-overlay { animation: fadeUp 1.2s ease-out; }
 
-.card { 
-    background: var(--white); 
-    border-radius: 25px; 
-    overflow: hidden; 
-    box-shadow: 0 15px 40px rgba(214, 209, 240, 0.3); 
-    margin-bottom: 50px; 
-}
-
-.event { 
-    display: grid; 
-    grid-template-columns: 80px 2px 1fr; 
-    gap: 20px; 
-    padding: 25px; 
-    border-bottom: 1px solid #f5f5f5; 
-}
-
-.time { text-align: right; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--soft-gold); font-weight: 600; }
-.line-v { background: var(--lavender); width: 2px; }
-
-@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-
-@media (max-width: 500px) {
-  .hero { height: 85vh; padding-top: 30px; }
-  .event { grid-template-columns: 70px 2px 1fr; padding: 20px; }
-}
 </style>
 </head>
 <body>
 
 <div class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-gradient"></div>
     
-    <div class="hero-card">
+    <div class="hero-overlay">
         <p class="hero-intro">L'union de deux âmes</p>
         <p class="hero-invite">Nous avons l'honneur de vous inviter</p>
         <div class="names">
-            <h1>Grâce</h1>
-            <span class="ampersand">&</span>
-            <h1>Joël</h1>
+            <h1>Grâce <span class="ampersand">&</span> Joël</h1>
         </div>
         <div class="hero-date">4 Juillet 2026</div>
         <p class="hero-loc">Bagneux • Palaiseau</p>
@@ -173,55 +131,12 @@ h1 {
 </div>
 
 <div class="wrap">
-  <h2 class="section-title">Le Programme</h2>
-
-  <div class="card">
-    <div class="event">
-      <div class="time">14h30</div>
-      <div class="line-v"></div>
-      <div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px;">Cérémonie Civile</div>
-        <div style="font-size: 14px; color: #777;">Mairie de Bagneux</div>
-      </div>
-    </div>
+    <h2 style="text-align: center; font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.2rem;">Le Programme</h2>
     
-    <div class="event">
-      <div class="time">18h00</div>
-      <div class="line-v"></div>
-      <div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px;">Vin d'Honneur</div>
-        <div style="font-size: 14px; color: #777;">4 allée des Garays, Palaiseau</div>
-      </div>
+    <div class="card">
+        <p style="text-align: center; font-style: italic; color: #777;">La suite de votre magnifique journée...</p>
     </div>
-    
-    <div class="event">
-      <div class="time">19h00</div>
-      <div class="line-v"></div>
-      <div>
-        <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px;">Dîner & Réception</div>
-        <div style="font-size: 14px; color: #777;">4 allée des Garays, Palaiseau</div>
-      </div>
-    </div>
-  </div>
-
-  <div style="text-align: center; margin: 60px 0;">
-    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: var(--text-dark); line-height: 1.7;">
-        "La vie plus belle dans les petites choses, l’amour dans le regard de l’autre. <br>
-        <span style="color: var(--soft-gold); font-style: normal; font-weight: 500;">Nous avançons ensemble avec Christ notre rocher.</span>"
-    </p>
-  </div>
-
-  <div class="card" style="padding: 12px;">
-      <img src="image.JPG" alt="Photo Mariage" style="width: 100%; border-radius: 15px; display: block; height: auto;">
-  </div>
-
 </div>
-
-<footer style="text-align: center; padding: 60px 20px; background-color: var(--lavender);">
-    <div style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; margin-bottom: 5px;">Grâce & Joël</div>
-    <div style="font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">04 Juillet 2026</div>
-    <div style="font-size: 0.8rem; letter-spacing: 1px; opacity: 0.8;">Dress Code : Pastel & Chic</div>
-</footer>
 
 </body>
 </html>

@@ -105,30 +105,44 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5r
 }
 .dresscode-image-container img { width: 100%; height: auto; display: block; }
 
-/* --- COMPTEUR AVEC HEURES ET MINUTES --- */
+/* --- NOUVEAU COMPTEUR DESIGN --- */
 #countdown-container {
     text-align: center;
-    margin: 40px 0;
+    margin: 50px 0;
     padding: 0 20px;
 }
 .countdown-intro {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
     color: var(--text-dark);
 }
-#countdown {
+.timer-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.timer-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+.timer-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--soft-gold);
+    font-weight: 400;
+}
+.timer-label {
     font-family: 'Jost', sans-serif;
-    color: var(--text-dark);
-    letter-spacing: 2px;
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    border: 1px solid var(--soft-gold);
-    padding: 15px 25px;
-    display: inline-block;
-    border-radius: 40px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    color: #888;
 }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -162,7 +176,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5r
             <p class="tm-time">14:30</p>
             <h3 class="tm-title">Cérémonie Civile</h3>
             <p class="tm-desc">
-                <a href="https://maps.google.com/?q=Mairie+de+Bagneux" target="_blank" class="address-link">
+                <a href="https://maps.google.com/?q=Mairie+de+Bagneux+92220" target="_blank" class="address-link">
                     <strong>Mairie de Bagneux</strong><br>92220 Bagneux
                 </a>
             </p>
@@ -172,7 +186,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5r
             <p class="tm-time">18:00</p>
             <h3 class="tm-title">Vin d'Honneur</h3>
             <p class="tm-desc">
-                <a href="https://maps.google.com/?q=4+allee+des+Garays+Palaiseau" target="_blank" class="address-link">
+                <a href="https://maps.google.com/?q=4+allée+des+Garays+Palaiseau" target="_blank" class="address-link">
                     4 allée des Garays, Palaiseau
                 </a>
             </p>
@@ -182,7 +196,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5r
             <p class="tm-time">19:30</p>
             <h3 class="tm-title">Dîner & Réception</h3>
             <p class="tm-desc">
-                <a href="https://maps.google.com/?q=4+allee+des+Garays+Palaiseau" target="_blank" class="address-link">
+                <a href="https://maps.google.com/?q=4+allée+des+Garays+Palaiseau" target="_blank" class="address-link">
                     4 allée des Garays, Palaiseau
                 </a>
             </p>
@@ -224,7 +238,20 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5r
 
 <div id="countdown-container">
     <p class="countdown-intro">Nous nous disons OUI dans :</p>
-    <div id="countdown">Chargement...</div>
+    <div class="timer-wrapper">
+        <div class="timer-block">
+            <span class="timer-number" id="days">00</span>
+            <span class="timer-label">Jours</span>
+        </div>
+        <div class="timer-block">
+            <span class="timer-number" id="hours">00</span>
+            <span class="timer-label">Heures</span>
+        </div>
+        <div class="timer-block">
+            <span class="timer-number" id="minutes">00</span>
+            <span class="timer-label">Minutes</span>
+        </div>
+    </div>
 </div>
 
 <footer style="text-align: center; padding: 35px 20px; background-color: var(--lavender); color: var(--text-dark);">
@@ -239,18 +266,19 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5r
         const diff = weddingDate - now;
 
         if (diff > 0) {
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
-            document.getElementById("countdown").innerHTML = 
-                days + " jours, " + hours + "h " + minutes + "min";
+            document.getElementById("days").innerHTML = d;
+            document.getElementById("hours").innerHTML = h < 10 ? "0" + h : h;
+            document.getElementById("minutes").innerHTML = m < 10 ? "0" + m : m;
         } else {
-            document.getElementById("countdown").innerHTML = "C'est le grand jour !";
+            document.getElementById("countdown-container").innerHTML = "<p class='countdown-intro'>C'est aujourd'hui ! ✨</p>";
         }
     }
 
-    // Mise à jour chaque minute
+    // Mise à jour toutes les minutes
     setInterval(updateCountdown, 60000);
     updateCountdown();
 </script>

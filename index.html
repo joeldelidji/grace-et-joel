@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mariage Grâce & Joel – 4 Juillet 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -12,13 +12,13 @@
   --soft-gold:   #C5A367;
   --powder-rose: #E8C5C5;
   --lavender:    #D6D1F0;
-  --cream-bg:    #F9F6F1;
-  --text-dark:   #423E3B;
+  --cream-bg:    #FAF8F5; /* Changé : Fond beige très clair au lieu de blanc */
+  --text-dark:   #333333;
   --white:       #FFFFFF;
 }
 
-html { scroll-behavior: smooth; }
-body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+html { scroll-behavior: smooth; height: 100%; }
+body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(--text-dark); overflow-x: hidden; line-height: 1.5; height: 100%; display: flex; flex-direction: column; }
 
 /* --- HERO --- */
 .hero {
@@ -29,7 +29,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 80px;
+  padding-bottom: 60px; /* Réduit */
   overflow: hidden;
   text-align: center;
 }
@@ -52,11 +52,11 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
 
 .scroll-arrow {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     color: var(--white);
-    font-size: 2rem;
+    font-size: 1.8rem;
     animation: bounce 2s infinite;
     z-index: 5;
     text-decoration: none;
@@ -64,7 +64,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
 
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
-    40% {transform: translateX(-50%) translateY(-10px);}
+    40% {transform: translateX(-50%) translateY(-8px);}
 }
 
 .hero-content {
@@ -73,67 +73,70 @@ body { font-family: 'Jost', sans-serif; background: var(--cream-bg); color: var(
   animation: fadeUp 1.5s ease-out both;
 }
 
-.hero-intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-.invitation-text { letter-spacing: 3px; font-size: 0.7rem; font-weight: 500; margin-top: 10px; margin-bottom: 20px; }
-h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5rem); color: var(--white); font-weight: 300; line-height: 0.8; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
-.ampersand { color: var(--soft-gold); font-size: 2.5rem; display: inline-block; font-family: 'Cormorant Garamond', serif; font-style: italic; }
-.hero-date { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--powder-rose); border-top: 1px solid rgba(255,255,255,0.3); display: inline-block; padding-top: 10px; margin-top: 10px; }
+.hero-intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+.invitation-text { letter-spacing: 3px; font-size: 0.65rem; font-weight: 500; margin-top: 8px; margin-bottom: 15px; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 13vw, 4.8rem); color: var(--white); font-weight: 300; line-height: 0.8; margin-bottom: 8px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+.ampersand { color: var(--soft-gold); font-size: 2.2rem; display: inline-block; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+.hero-date { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--powder-rose); border-top: 1px solid rgba(255,255,255,0.3); display: inline-block; padding-top: 8px; margin-top: 8px; }
 
-/* --- SECTION PROGRAMME (Inspiration Canva) --- */
+/* --- SECTION PROGRAMME --- */
 .wrap {
     max-width: 800px;
     margin: 0 auto;
-    padding: 60px 25px;
+    padding: 40px 20px; /* Réduit */
+    flex: 1; /* Permet au contenu de pousser le footer vers le bas */
 }
 
-.section-header { text-align: center; margin-bottom: 60px; }
-.section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
-.section-subtitle { color: var(--soft-gold); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; }
+.section-header { text-align: center; margin-bottom: 40px; } /* Réduit */
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; }
+.section-subtitle { color: var(--soft-gold); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; }
 
-.timeline { position: relative; margin-top: 40px; }
+.timeline { position: relative; margin-top: 30px; }
 .timeline-item { 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     text-align: center; 
-    margin-bottom: 50px; 
+    margin-bottom: 40px; /* Réduit */
     position: relative; 
 }
 
 .timeline-item::after {
     content: '';
     width: 1px;
-    height: 40px;
+    height: 30px;
     background: var(--lavender);
     position: absolute;
-    bottom: -45px;
+    bottom: -35px;
 }
 .timeline-item:last-child::after { display: none; }
 
-.tm-time { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--soft-gold); letter-spacing: 2px; margin-bottom: 5px; }
-.tm-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; text-transform: uppercase; margin-bottom: 5px; }
-.tm-desc { font-size: 0.9rem; color: #777; letter-spacing: 1px; max-width: 300px; }
+.tm-time { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--soft-gold); letter-spacing: 2px; margin-bottom: 3px; }
+.tm-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; text-transform: uppercase; margin-bottom: 3px; }
+.tm-desc { font-size: 0.85rem; color: #666; letter-spacing: 1px; max-width: 300px; }
 
-/* --- CITATION & IMAGE --- */
-.quote-box { text-align: center; margin: 80px 0; padding: 0 20px; }
-.quote-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: var(--text-dark); position: relative; }
+/* --- CITATION --- */
+.quote-box { text-align: center; margin: 60px 0; padding: 0 15px; } /* Réduit */
+.quote-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: var(--text-dark); position: relative; }
 
-.last-image-card {
-    border-radius: 0; /* Style plus "photo d'art" */
-    overflow: hidden;
-    margin-top: 20px;
-    padding: 0 !important;
-    background: none;
-    box-shadow: none;
+/* --- IMAGE ENCADRÉE (Modifié) --- */
+.encadre-photo {
+    background: var(--white);
+    padding: 12px; /* Cadre blanc */
+    border-radius: 4px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Ombre douce */
+    max-width: 90%;
+    margin: 20px auto;
 }
-.last-image-card img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.encadre-photo img { width: 100%; height: auto; display: block; border-radius: 2px; }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 500px) {
   .hero { height: 100vh; }
-  .section-title { font-size: 2rem; }
-  .tm-title { font-size: 1.5rem; }
+  .section-title { font-size: 1.8rem; }
+  .tm-title { font-size: 1.4rem; }
+  .wrap { padding: 30px 15px; }
 }
 </style>
 </head>
@@ -151,7 +154,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5r
             <h1>Grâce <span class="ampersand">&</span> Joël</h1>
         </div>
         <div class="hero-date">04 . 07 . 2026</div>
-        <p style="color:white; letter-spacing:3px; margin-top: 15px; font-size: 0.8rem; opacity: 0.9;">BAGNEUX • PALAISEAU</p>
+        <p style="color:white; letter-spacing:3px; margin-top: 12px; font-size: 0.75rem; opacity: 0.9;">BAGNEUX • PALAISEAU</p>
     </div>
     <a href="#programme" class="scroll-arrow">↓</a>
 </div>
@@ -166,7 +169,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5r
         <div class="timeline-item">
             <p class="tm-time">14:30</p>
             <h3 class="tm-title">Cérémonie Civile</h3>
-            <p class="tm-desc">Mairie de Bagneux</p>
+            <p class="tm-desc"><strong>Mairie de Bagneux</strong><br>92220 Bagneux</p>
         </div>
 
         <div class="timeline-item">
@@ -192,18 +195,18 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5r
         <p class="quote-text">
             "La vie plus belle dans les petites choses, l’amour dans le regard de l’autre."
             <br>
-            <span style="color: var(--soft-gold); font-size: 1.1rem; font-style: normal; font-weight: 500; text-transform: uppercase; letter-spacing: 2px;">Christ notre rocher</span>
+            <span style="color: var(--soft-gold); font-size: 1rem; font-style: normal; font-weight: 500; text-transform: uppercase; letter-spacing: 2px;">Christ notre rocher</span>
         </p>
     </div>
 
-    <div class="last-image-card">
+    <div class="encadre-photo">
         <img src="image.JPG" alt="Grâce et Joël">
     </div>
 </div>
 
-<footer style="text-align: center; padding: 60px 20px; background-color: var(--lavender); color: var(--text-dark);">
+<footer style="text-align: center; padding: 40px 20px; background-color: var(--lavender); color: var(--text-dark);">
     <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; margin-bottom: 5px;">Grâce & Joël</div>
-    <div style="font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;">04 JUILLET 2026</div>
+    <div style="font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px;">04 JUILLET 2026</div>
     <div style="font-size: 0.7rem; letter-spacing: 1px; opacity: 0.6; text-transform: uppercase;">Dress Code : Pastel & Chic</div>
 </footer>
 

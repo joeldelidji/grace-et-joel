@@ -218,3 +218,80 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 15vw, 5r
             <p class="tm-desc">Clôture des festivités</p>
         </div>
     </div>
+
+    <div class="quote-box">
+        <p class="quote-text">
+            "La vie plus belle dans les petites choses, l’amour dans le regard de l’autre."
+            <br>
+            <span style="color: var(--soft-gold); font-size: 1rem; font-style: normal; font-weight: 500; text-transform: uppercase; letter-spacing: 2px;">Christ notre rocher</span>
+        </p>
+    </div>
+
+    <div class="last-image-card">
+        <img src="image.JPG" alt="Grâce et Joël">
+    </div>
+</div>
+
+<div style="text-align: center; margin-bottom: 10px; padding: 0 20px;">
+    <p style="font-family: 'Jost', sans-serif; font-weight: 300; letter-spacing: 1px; font-size: 0.95rem; color: var(--text-dark); opacity: 0.85;">
+        Votre présence à nos côtés sera le plus beau des cadeaux.
+    </p>
+    
+    <div class="dresscode-header">
+        Dress Code : <span style="color: var(--soft-gold);">Pastel & Chic</span>
+    </div>
+</div>
+
+<div class="dresscode-image-container">
+    <img src="dpastel.jpg" alt="Dress Code Palette Pastel">
+</div>
+
+<div id="countdown-container">
+    <p class="countdown-intro">Nous nous disons OUI dans :</p>
+    <div class="timer-wrapper">
+        <div class="timer-block">
+            <span class="timer-number" id="days">00</span>
+            <span class="timer-label">Jours</span>
+        </div>
+        <div class="timer-block">
+            <span class="timer-number" id="hours">00</span>
+            <span class="timer-label">Heures</span>
+        </div>
+        <div class="timer-block">
+            <span class="timer-number" id="minutes">00</span>
+            <span class="timer-label">Minutes</span>
+        </div>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 35px 20px; background-color: var(--lavender); color: var(--text-dark);">
+    <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-style: italic; margin-bottom: 5px;">Grâce & Joël</div>
+    <div style="font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;">04 JUILLET 2026</div>
+</footer>
+
+<script>
+    function updateCountdown() {
+        const weddingDate = new Date("July 4, 2026 14:00:00").getTime();
+        const now = new Date().getTime();
+        const diff = weddingDate - now;
+
+        if (diff > 0) {
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById("days").innerHTML = d;
+            document.getElementById("hours").innerHTML = h < 10 ? "0" + h : h;
+            document.getElementById("minutes").innerHTML = m < 10 ? "0" + m : m;
+        } else {
+            document.getElementById("countdown-container").innerHTML = "<p class='countdown-intro'>C'est aujourd'hui ! ✨</p>";
+        }
+    }
+
+    // Mise à jour toutes les minutes
+    setInterval(updateCountdown, 60000);
+    updateCountdown();
+</script>
+
+</body>
+</html>
